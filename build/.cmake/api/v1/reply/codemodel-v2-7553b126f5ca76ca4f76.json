@@ -1,0 +1,258 @@
+{
+	"configurations" : 
+	[
+		{
+			"abstractTargets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "NanoSVG::nanosvg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-NanoSVG__nanosvg-Debug-2b6f7c10c4e74f2e8355.json",
+					"name" : "NanoSVG::nanosvg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "NanoSVG::nanosvgrast::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-NanoSVG__nanosvgrast-Debug-3a5878bfc02bfd141afb.json",
+					"name" : "NanoSVG::nanosvgrast",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "OpenGL::GL::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-OpenGL__GL-Debug-ad5d159a13ac40aede47.json",
+					"name" : "OpenGL::GL",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "OpenGL::GLU::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-OpenGL__GLU-Debug-7a2faf2556ca10ed639d.json",
+					"name" : "OpenGL::GLU",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Threads::Threads::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Threads__Threads-Debug-5085e6f4e78954cbf7de.json",
+					"name" : "Threads::Threads",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "unofficial::sqlite3::sqlite3::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-unofficial__sqlite3__sqlite3-Debug-006eaad832f30214a8a0.json",
+					"name" : "unofficial::sqlite3::sqlite3",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "wx::wxadv::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-wx__wxadv-Debug-af848bd83b2fb1bd6c3c.json",
+					"name" : "wx::wxadv",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "wx::wxaui::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-wx__wxaui-Debug-acbbf39d7e35b13de191.json",
+					"name" : "wx::wxaui",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "wx::wxbase::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-wx__wxbase-Debug-45d78b866586c2521134.json",
+					"name" : "wx::wxbase",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "wx::wxcore::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-wx__wxcore-Debug-ef97e1600bfb8658a777.json",
+					"name" : "wx::wxcore",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "wx::wxgl::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-wx__wxgl-Debug-895f6d2c07fa0767b524.json",
+					"name" : "wx::wxgl",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "wx::wxhtml::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-wx__wxhtml-Debug-b087a839e960ef22cd89.json",
+					"name" : "wx::wxhtml",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "wx::wxnet::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-wx__wxnet-Debug-e2bc11cea0d35e71abc6.json",
+					"name" : "wx::wxnet",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "wx::wxpropgrid::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-wx__wxpropgrid-Debug-4700a6f469280d089d3f.json",
+					"name" : "wx::wxpropgrid",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "wx::wxqa::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-wx__wxqa-Debug-0c400c97059459528c68.json",
+					"name" : "wx::wxqa",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "wx::wxribbon::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-wx__wxribbon-Debug-574ad9c826d2346d50dd.json",
+					"name" : "wx::wxribbon",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "wx::wxrichtext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-wx__wxrichtext-Debug-1a7df5d03c7609131366.json",
+					"name" : "wx::wxrichtext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "wx::wxstc::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-wx__wxstc-Debug-ded77c51007478e22ba7.json",
+					"name" : "wx::wxstc",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "wx::wxxml::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-wx__wxxml-Debug-175676df91206ed41d16.json",
+					"name" : "wx::wxxml",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "wx::wxxrc::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-wx__wxxrc-Debug-ea03de023d32367b23b6.json",
+					"name" : "wx::wxxrc",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "wxWidgets::wxWidgets::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-wxWidgets__wxWidgets-Debug-179da6dcc4b2426dbe06.json",
+					"name" : "wxWidgets::wxWidgets",
+					"projectIndex" : 0
+				}
+			],
+			"directories" : 
+			[
+				{
+					"abstractTargetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20
+					],
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f040eec181a89de70dbe.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"abstractTargetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "warehouse_electronics",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "warehouse_app::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-warehouse_app-Debug-bde4b04567cf6b91d05e.json",
+					"name" : "warehouse_app",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/FYM/code/warehouse-electronics/build",
+		"source" : "C:/Users/FYM/code/warehouse-electronics"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 10
+	}
+}

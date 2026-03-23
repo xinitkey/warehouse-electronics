@@ -1,0 +1,3 @@
+C:/Users/FYM/code/warehouse-electronics/build/CMakeFiles/warehouse_app.dir
+C:/Users/FYM/code/warehouse-electronics/build/CMakeFiles/edit_cache.dir
+C:/Users/FYM/code/warehouse-electronics/build/CMakeFiles/rebuild_cache.dir
