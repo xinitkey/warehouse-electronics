@@ -1,25 +1,38 @@
 {
-  "version": 3,
-  "configurePresets": [
-    {
-      "name": "msvc-ninja",
-      "displayName": "MSVC + Ninja + vcpkg",
-      "generator": "Ninja",
-      "binaryDir": "${sourceDir}/build",
-      "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Debug",
-        "CMAKE_TOOLCHAIN_FILE": "C:/Users/FYM/vcpkg/scripts/buildsystems/vcpkg.cmake",
-        "CMAKE_C_COMPILER": "cl.exe",
-        "CMAKE_CXX_COMPILER": "cl.exe"
-      }
-    }
-  ],
-  "buildPresets": [
-    {
-      "name": "msvc-ninja-build",
-      "displayName": "Build (msvc-ninja)",
-      "configurePreset": "msvc-ninja"
-    }
-  ]
+	"version": 3,
+	"configurePresets": [
+		{
+			"name": "msvc-ninja",
+			"displayName": "MSVC + Ninja + vcpkg",
+			"generator": "Ninja",
+			"binaryDir": "${sourceDir}/build",
+			"cacheVariables": {
+				"CMAKE_BUILD_TYPE": "Debug",
+				"CMAKE_TOOLCHAIN_FILE": "C:/Users/FYM/vcpkg/scripts/buildsystems/vcpkg.cmake",
+				"CMAKE_C_COMPILER": "cl.exe",
+				"CMAKE_CXX_COMPILER": "cl.exe"
+			}
+		},
+		{
+			"name": "linux-ninja",
+			"displayName": "Linux + Ninja",
+			"generator": "Ninja",
+			"binaryDir": "${sourceDir}/build-linux",
+			"cacheVariables": {
+				"CMAKE_BUILD_TYPE": "Debug"
+			}
+		}
+	],
+	"buildPresets": [
+		{
+			"name": "msvc-ninja-build",
+			"displayName": "Build (msvc-ninja)",
+			"configurePreset": "msvc-ninja"
+		},
+		{
+			"name": "linux-ninja-build",
+			"displayName": "Build (linux-ninja)",
+			"configurePreset": "linux-ninja"
+		}
+	]
 }
-

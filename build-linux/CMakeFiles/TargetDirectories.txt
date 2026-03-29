@@ -1,0 +1,3 @@
+/home/lain/Projects/warehouse-electronics/build-linux/CMakeFiles/warehouse_app.dir
+/home/lain/Projects/warehouse-electronics/build-linux/CMakeFiles/edit_cache.dir
+/home/lain/Projects/warehouse-electronics/build-linux/CMakeFiles/rebuild_cache.dir
