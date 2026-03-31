@@ -6,18 +6,20 @@
 
 class AddItemDialog : public wxDialog {
 public:
-  explicit AddItemDialog(wxWindow *parent);
+  AddItemDialog(wxWindow *parent, const Item *existingItem = nullptr);
 
   bool GetItem(Item &out) const;
 
-  void SetName(const std::string &v) { nameCtrl_->SetValue(v); }
-  void SetCategory(const std::string &v) { categoryCtrl_->SetValue(v); }
-  void SetLocation(const std::string &v) { locationCtrl_->SetValue(v); }
-  void SetQuantity(int q) { quantityCtrl_->SetValue(q); }
+  void SetItem(const Item &item);
 
 private:
   wxTextCtrl *nameCtrl_ = nullptr;
   wxTextCtrl *categoryCtrl_ = nullptr;
   wxTextCtrl *locationCtrl_ = nullptr;
   wxSpinCtrl *quantityCtrl_ = nullptr;
+  wxTextCtrl *skuCtrl_ = nullptr;
+  wxTextCtrl *priceCtrl_ = nullptr;
+  wxTextCtrl *supplierCtrl_ = nullptr;
+  wxSpinCtrl *minQuantityCtrl_ = nullptr;
+  wxTextCtrl *descriptionCtrl_ = nullptr;
 };

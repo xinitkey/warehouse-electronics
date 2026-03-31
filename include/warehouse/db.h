@@ -8,6 +8,7 @@ public:
   ~Db();
 
   void initSchema();
+  void migrateSchema();
 
   sqlite3 *handle() { return db_; }
   sqlite3 *handle() const { return db_; }

@@ -25,6 +25,9 @@ private:
   void OnItemActivated(wxDataViewEvent &evt);
   void OnSearch(wxCommandEvent &evt);
   void OnFocusSearch(wxCommandEvent &evt);
+  void OnExportCsv(wxCommandEvent &evt);
+  void OnImportCsv(wxCommandEvent &evt);
+  void OnAbout(wxCommandEvent &evt);
   void UpdateStatsPanel();
 
   std::optional<int> GetSelectedItemId() const;

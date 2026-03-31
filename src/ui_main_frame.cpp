@@ -1,6 +1,9 @@
 #include "ui_main_frame.h"
 #include "warehouse/ui_add_item_dialog.h"
 #include <string>
+#include <wx/filename.h>
+#include <wx/filedlg.h>
+#include <wx/msgdlg.h>
 
 enum {
   ID_AddItem = wxID_HIGHEST + 1,
@@ -23,12 +26,33 @@ wxBEGIN_EVENT_TABLE(MainFrame, wxFrame)
     EVT_MENU(ID_Accel_Edit, MainFrame::OnEditItem)
     EVT_MENU(ID_Accel_Delete, MainFrame::OnDeleteItem)
     EVT_MENU(ID_Accel_Search, MainFrame::OnFocusSearch)
+    EVT_MENU(wxID_OPEN, MainFrame::OnImportCsv)
+    EVT_MENU(wxID_SAVE, MainFrame::OnExportCsv)
+    EVT_MENU(wxID_ABOUT, MainFrame::OnAbout)
 wxEND_EVENT_TABLE()
 
 MainFrame::MainFrame(Storage &storage)
     : wxFrame(nullptr, wxID_ANY, "Warehouse Electronics", wxDefaultPosition,
-              wxSize(900, 600)),
+              wxSize(1000, 700)),
       storage_(storage) {
+  // Create menu bar
+  auto* menuBar = new wxMenuBar();
+  
+  // File menu
+  auto* fileMenu = new wxMenu();
+  fileMenu->Append(wxID_OPEN, "Import CSV\tCtrl+I", "Import items from CSV");
+  fileMenu->Append(wxID_SAVE, "Export CSV\tCtrl+S", "Export items to CSV");
+  fileMenu->AppendSeparator();
+  fileMenu->Append(wxID_EXIT, "Exit\tAlt+X", "Exit application");
+  menuBar->Append(fileMenu, "File");
+  
+  // Help menu
+  auto* helpMenu = new wxMenu();
+  helpMenu->Append(wxID_ABOUT, "About", "About this application");
+  menuBar->Append(helpMenu, "Help");
+  
+  SetMenuBar(menuBar);
+  
   auto *panel = new wxPanel(this);
   auto *mainSizer = new wxBoxSizer(wxVERTICAL);
 
@@ -80,6 +104,8 @@ void MainFrame::SetupAccelerators() {
       wxAcceleratorEntry(wxACCEL_CTRL, 'E', ID_Accel_Edit),
       wxAcceleratorEntry(wxACCEL_CTRL, 'D', ID_Accel_Delete),
       wxAcceleratorEntry(wxACCEL_CTRL, 'F', ID_Accel_Search),
+      wxAcceleratorEntry(wxACCEL_CTRL, 'I', wxID_OPEN),
+      wxAcceleratorEntry(wxACCEL_CTRL, 'S', wxID_SAVE),
   };
   accelerators_ = wxAcceleratorTable(sizeof(entries) / sizeof(entries[0]),
                                      entries);
@@ -91,13 +117,66 @@ void MainFrame::OnFocusSearch(wxCommandEvent &) {
   searchBox_->SelectAll();
 }
 
+void MainFrame::OnExportCsv(wxCommandEvent &) {
+  wxFileDialog dlg(this, "Export to CSV", "", "warehouse_export.csv",
+                   "CSV files (*.csv)|*.csv", wxFD_SAVE | wxFD_OVERWRITE_PROMPT);
+  if (dlg.ShowModal() == wxID_OK) {
+    try {
+      storage_.exportToCsv(dlg.GetPath().ToStdString());
+      wxMessageBox("Data exported successfully!", "Export", wxOK | wxICON_INFORMATION, this);
+    } catch (const std::exception &ex) {
+      wxMessageBox(ex.what(), "Export Error", wxOK | wxICON_ERROR, this);
+    }
+  }
+}
+
+void MainFrame::OnImportCsv(wxCommandEvent &) {
+  wxFileDialog dlg(this, "Import from CSV", "", "",
+                   "CSV files (*.csv)|*.csv", wxFD_OPEN | wxFD_FILE_MUST_EXIST);
+  if (dlg.ShowModal() == wxID_OK) {
+    int result = wxMessageBox(
+        "Importing will add new items from the CSV file.\nContinue?",
+        "Confirm Import", wxYES_NO | wxICON_QUESTION, this);
+    if (result != wxYES) return;
+    
+    try {
+      storage_.importFromCsv(dlg.GetPath().ToStdString());
+      RefreshItems();
+      UpdateStatsPanel();
+      wxMessageBox("Data imported successfully!", "Import", wxOK | wxICON_INFORMATION, this);
+    } catch (const std::exception &ex) {
+      wxMessageBox(ex.what(), "Import Error", wxOK | wxICON_ERROR, this);
+    }
+  }
+}
+
+void MainFrame::OnAbout(wxCommandEvent &) {
+  wxMessageBox(
+    "Warehouse Electronics v1.1\n\n"
+    "A desktop application for managing electronics inventory.\n\n"
+    "Features:\n"
+    "- CRUD operations with extended fields (SKU, price, supplier)\n"
+    "- Search by name, category, location, SKU, supplier\n"
+    "- Statistics dashboard with low stock alerts\n"
+    "- CSV import/export\n"
+    "- Operation log tracking\n\n"
+    "Hotkeys:\n"
+    "Ctrl+N - New item\n"
+    "Ctrl+E - Edit item\n"
+    "Ctrl+D - Delete item\n"
+    "Ctrl+F - Focus search\n"
+    "Ctrl+I - Import CSV\n"
+    "Ctrl+S - Export CSV",
+    "About", wxOK | wxICON_INFORMATION, this);
+}
+
 void MainFrame::UpdateStatsPanel() {
   try {
     auto stats = storage_.getStats(5);
 
     wxString statsText = wxString::Format(
-        "Total items: %d | Total quantity: %d | Low stock alerts: %d",
-        stats.totalItems, stats.totalQuantity, stats.lowStockItems);
+        "Total items: %d | Total quantity: %d | Total value: $%.2f | Low stock alerts: %d",
+        stats.totalItems, stats.totalQuantity, stats.totalValue, stats.lowStockItems);
 
     if (!stats.itemsByCategory.empty()) {
       statsText += " | Categories: ";
@@ -137,6 +216,7 @@ void MainFrame::OnAddItem(wxCommandEvent &) {
 
     try {
       storage_.addItem(item);
+      storage_.logOperation(0, item.name, OperationType::Purchase, item.quantity, "Initial stock");
       RefreshItems();
       UpdateStatsPanel();
     } catch (const std::exception &ex) {
@@ -160,12 +240,7 @@ void MainFrame::OnEditItem(wxCommandEvent &) {
     return;
   }
 
-  AddItemDialog dlg(this);
-
-  dlg.SetName(item.name);
-  dlg.SetCategory(item.category);
-  dlg.SetLocation(item.location);
-  dlg.SetQuantity(item.quantity);
+  AddItemDialog dlg(this, &item);
 
   if (dlg.ShowModal() == wxID_OK) {
     Item updated;
@@ -177,6 +252,14 @@ void MainFrame::OnEditItem(wxCommandEvent &) {
     updated.id = id;
 
     try {
+      // Log quantity change if it changed
+      int qtyDiff = updated.quantity - item.quantity;
+      if (qtyDiff > 0) {
+        storage_.logOperation(id, updated.name, OperationType::Purchase, qtyDiff, "Stock adjustment");
+      } else if (qtyDiff < 0) {
+        storage_.logOperation(id, updated.name, OperationType::WriteOff, -qtyDiff, "Stock adjustment");
+      }
+      
       storage_.updateItem(updated);
       RefreshItems();
       UpdateStatsPanel();

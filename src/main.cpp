@@ -10,6 +10,7 @@ public:
     try {
       db_ = std::make_unique<Db>("warehouse.db");
       db_->initSchema();
+      db_->migrateSchema();
       storage_ = std::make_unique<Storage>(*db_);
     } catch (const std::exception &ex) {
       wxMessageBox(ex.what(), "DB error", wxOK | wxICON_ERROR);

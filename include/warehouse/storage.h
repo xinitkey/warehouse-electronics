@@ -4,12 +4,31 @@
 #include <string>
 #include <optional>
 #include <map>
+#include <chrono>
 
 struct Stats {
   int totalItems;
   int totalQuantity;
   int lowStockItems;
+  double totalValue;
   std::map<std::string, int> itemsByCategory;
+};
+
+enum class OperationType {
+  Purchase,   // Приход
+  Sale,       // Расход
+  Return,     // Возврат
+  WriteOff    // Списание
+};
+
+struct OperationLog {
+  int id;
+  int itemId;
+  std::string itemName;
+  OperationType type;
+  int quantityChange;
+  std::string comment;
+  std::chrono::system_clock::time_point timestamp;
 };
 
 class Db;
@@ -25,6 +44,15 @@ public:
   void updateItem(const Item &item);
   void deleteItem(int id);
   Stats getStats(int minQuantityThreshold = 5);
+  
+  // Operation log
+  void logOperation(int itemId, const std::string &itemName, OperationType type, 
+                    int quantityChange, const std::string &comment = "");
+  std::vector<OperationLog> getOperationLog(int itemId = -1, int limit = 50);
+  
+  // CSV Import/Export
+  void exportToCsv(const std::string &filename);
+  void importFromCsv(const std::string &filename);
 
 private:
   Db &db_;
