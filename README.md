@@ -2,13 +2,20 @@
 
 A desktop application for managing electronics inventory in a warehouse. Built with C++, wxWidgets, and SQLite.
 
+![Version](https://img.shields.io/badge/version-1.1-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+
 ## Features
 
 - **CRUD Operations** - Add, edit, delete, and view warehouse items
-- **Search & Filter** - Real-time search by name, category, or location
-- **Statistics Dashboard** - View total items, quantities, and category breakdown
-- **Low Stock Alerts** - Visual warnings when items fall below threshold (default: 5 units)
+- **Extended Item Fields** - SKU, price, supplier, minimum quantity, description
+- **Search & Filter** - Real-time search by name, category, location, SKU, or supplier
+- **Statistics Dashboard** - Total items, quantities, total value, and category breakdown
+- **Low Stock Alerts** - Visual warnings when items fall below minimum threshold
+- **CSV Import/Export** - Bulk data operations
+- **Operation Log** - Track inventory movements (purchase, sale, return, write-off)
 - **Keyboard Shortcuts** - Quick access to common actions
+- **Tabbed Dialog** - Organized input with 3 tabs (Basic Info, Pricing, Description)
 
 ## Keyboard Shortcuts
 
@@ -18,6 +25,9 @@ A desktop application for managing electronics inventory in a warehouse. Built w
 | `Ctrl+E` | Edit selected item |
 | `Ctrl+D` | Delete selected item |
 | `Ctrl+F` | Focus search box |
+| `Ctrl+I` | Import from CSV |
+| `Ctrl+S` | Export to CSV |
+| `Alt+X` | Exit application |
 
 ## Database Schema
 
@@ -27,7 +37,23 @@ CREATE TABLE items (
     name TEXT NOT NULL,
     category TEXT,
     location TEXT,
-    quantity INTEGER NOT NULL DEFAULT 0
+    quantity INTEGER NOT NULL DEFAULT 0,
+    sku TEXT DEFAULT '',
+    price REAL DEFAULT 0.0,
+    supplier TEXT DEFAULT '',
+    min_quantity INTEGER DEFAULT 5,
+    description TEXT DEFAULT ''
+);
+
+CREATE TABLE operation_logs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id INTEGER NOT NULL,
+    item_name TEXT NOT NULL,
+    operation_type INTEGER NOT NULL,  -- 0=Purchase, 1=Sale, 2=Return, 3=WriteOff
+    quantity_change INTEGER NOT NULL,
+    comment TEXT DEFAULT '',
+    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY(item_id) REFERENCES items(id)
 );
 ```
 
@@ -37,7 +63,7 @@ CREATE TABLE items (
 
 - CMake 3.20+
 - C++17 compiler
-- wxWidgets
+- wxWidgets 3.2+
 - SQLite3
 
 ### Linux (Arch Linux)
@@ -73,41 +99,85 @@ cmake --build build --config Release
 ```
 warehouse-electronics/
 ├── include/warehouse/
-│   ├── models.h           # Data structures (Item, Stats)
-│   ├── db.h               # Database wrapper
-│   ├── storage.h          # Data access layer
-│   ├── add_item_dialog.h  # Add/Edit dialog
+│   ├── models.h              # Data structures (Item, Stats, OperationLog)
+│   ├── db.h                  # Database wrapper
+│   ├── storage.h             # Data access layer
+│   ├── add_item_dialog.h     # Add/Edit dialog
 │   └── ui_add_item_dialog.h
 ├── src/
-│   ├── main.cpp           # Application entry point
-│   ├── ui_main_frame.cpp  # Main window implementation
-│   ├── ui_main_frame.h    # Main window header
+│   ├── main.cpp              # Application entry point
+│   ├── ui_main_frame.cpp     # Main window implementation
+│   ├── ui_main_frame.h       # Main window header
 │   └── warehouse/
-│       ├── db.cpp         # SQLite initialization
-│       ├── storage.cpp    # CRUD operations + search + stats
+│       ├── db.cpp            # SQLite initialization + migrations
+│       ├── storage.cpp       # CRUD, search, stats, operations, CSV
 │       └── ui_add_item_dialog.cpp
 ├── CMakeLists.txt
-└── warehouse.db           # SQLite database
+└── warehouse.db              # SQLite database
 ```
 
 ## Usage
 
+### Basic Operations
 1. **Add Item** - Click "Add" button or press `Ctrl+N`
 2. **Edit Item** - Select item and click "Edit" or press `Ctrl+E` (or double-click)
 3. **Delete Item** - Select item and click "Delete" or press `Ctrl+D`
 4. **Search** - Type in the search box or press `Ctrl+F` to focus it
-5. **View Stats** - Statistics are displayed at the top of the window
+5. **View Stats** - Statistics displayed at the top of the window
+
+### Import/Export
+- **Export CSV** - `File → Export CSV` or `Ctrl+S`
+- **Import CSV** - `File → Import CSV` or `Ctrl+I`
+
+### CSV Format
+```csv
+ID,Name,Category,Location,Quantity,SKU,Price,Supplier,MinQuantity,Description
+1,MacBook Pro M3,Laptops,Shelf A1,8,LAP-001,2499.00,Apple,3,"Latest M3 chip"
+```
+
+## Table Columns
+
+| Column | Description |
+|--------|-------------|
+| ID | Unique identifier |
+| Name | Item name |
+| SKU | Stock keeping unit / barcode |
+| Category | Item category |
+| Location | Warehouse location |
+| Supplier | Supplier name |
+| Price | Cost price |
+| Qty | Current quantity |
+| Min | Minimum stock threshold |
+| Description | Item description |
+
+## Version History
+
+### v1.1 (Latest)
+- ✅ Extended item fields (SKU, price, supplier, min_quantity, description)
+- ✅ Database migration system
+- ✅ Operation log tracking
+- ✅ CSV import/export
+- ✅ Tabbed add/edit dialog
+- ✅ Menu bar with File and Help menus
+- ✅ Total inventory value in stats
+- ✅ Extended search (SKU, supplier)
+
+### v1.0
+- Basic CRUD operations
+- Search functionality
+- Statistics dashboard
+- Low stock alerts
+- Keyboard shortcuts
 
 ## Future Enhancements
 
-- [ ] Barcode/SKU support
-- [ ] Price tracking (cost/sale price)
-- [ ] Supplier management
-- [ ] Import/Export (CSV, Excel)
-- [ ] Operation history log
+- [ ] Barcode scanner support
+- [ ] Sale price tracking
 - [ ] PDF report generation
 - [ ] Dark theme support
-- [ ] Multi-user support with authentication
+- [ ] Multi-user authentication
+- [ ] Cloud sync
+- [ ] Mobile companion app
 
 ## License
 
