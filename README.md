@@ -132,7 +132,11 @@ warehouse-electronics/
 ### CSV Format
 ```csv
 ID,Name,Category,Location,Quantity,SKU,Price,Supplier,MinQuantity,Description
-1,MacBook Pro M3,Laptops,Shelf A1,8,LAP-001,2499.00,Apple,3,"Latest M3 chip"
+1,MacBook Pro 16" M3,Laptops,Shelf A1,8,LAP-001,2499.00,Apple,3,"Latest M3 chip, 18GB RAM, 512GB SSD"
+2,Dell XPS 15,Laptops,Shelf A1,12,LAP-002,1799.00,Dell,5,"Intel i9, 32GB RAM, 1TB SSD"
+3,Logitech MX Master 3S,Mice,Shelf C1,50,MOU-001,99.99,Logitech,15,"Wireless, 8000 DPI"
+4,iPhone 15 Pro Max,Smartphones,Vault 1,25,PHN-001,1199.00,Apple,8,"256GB, Titanium"
+5,Samsung 990 PRO 2TB,SSDs,Shelf F1,50,SSD-001,169.99,Samsung,15,"NVMe Gen4, 7450 MB/s"
 ```
 
 ## Table Columns
