@@ -66,15 +66,20 @@ MainFrame::MainFrame(Storage &storage)
   statsPanel->SetSizer(statsSizer);
 
   searchBox_ = new wxTextCtrl(panel, ID_SearchBox, "");
-  searchBox_->SetHint("Search by name, category, or location...");
+  searchBox_->SetHint("Search by name, category, location, SKU, supplier...");
   list_ =
       new wxDataViewListCtrl(panel, wxID_ANY, wxDefaultPosition, wxDefaultSize);
 
-  list_->AppendTextColumn("ID", wxDATAVIEW_CELL_INERT, 60);
-  list_->AppendTextColumn("Name", wxDATAVIEW_CELL_INERT, 200);
-  list_->AppendTextColumn("Category", wxDATAVIEW_CELL_INERT, 120);
-  list_->AppendTextColumn("Location", wxDATAVIEW_CELL_INERT, 120);
-  list_->AppendTextColumn("Quantity", wxDATAVIEW_CELL_INERT, 80);
+  list_->AppendTextColumn("ID", wxDATAVIEW_CELL_INERT, 50);
+  list_->AppendTextColumn("Name", wxDATAVIEW_CELL_INERT, 150);
+  list_->AppendTextColumn("SKU", wxDATAVIEW_CELL_INERT, 90);
+  list_->AppendTextColumn("Category", wxDATAVIEW_CELL_INERT, 90);
+  list_->AppendTextColumn("Location", wxDATAVIEW_CELL_INERT, 90);
+  list_->AppendTextColumn("Supplier", wxDATAVIEW_CELL_INERT, 90);
+  list_->AppendTextColumn("Price", wxDATAVIEW_CELL_INERT, 70);
+  list_->AppendTextColumn("Qty", wxDATAVIEW_CELL_INERT, 45);
+  list_->AppendTextColumn("Min", wxDATAVIEW_CELL_INERT, 45);
+  list_->AppendTextColumn("Description", wxDATAVIEW_CELL_INERT, 200);
 
   auto *buttonsSizer = new wxBoxSizer(wxHORIZONTAL);
   auto *addBtn = new wxButton(panel, ID_AddItem, "Add");
@@ -312,9 +317,15 @@ void MainFrame::RefreshItems(const std::string &filter) {
     wxVector<wxVariant> row;
     row.push_back(wxVariant(wxString::Format("%d", it.id)));
     row.push_back(wxVariant(it.name));
+    row.push_back(wxVariant(it.sku));
     row.push_back(wxVariant(it.category));
     row.push_back(wxVariant(it.location));
+    row.push_back(wxVariant(it.supplier));
+    row.push_back(wxVariant(wxString::Format("$%.2f", it.price)));
     row.push_back(wxVariant(wxString::Format("%d", it.quantity)));
+    row.push_back(wxVariant(wxString::Format("%d", it.minQuantity)));
+    row.push_back(wxVariant(it.description));
+    
     list_->AppendItem(row);
   }
 }
