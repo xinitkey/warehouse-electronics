@@ -1,15 +1,17 @@
 #pragma once
-#include <string>
 #include <sqlite3.h>
+#include <string>
 
 class Db {
 public:
-    explicit Db(const std::string& path);
-    ~Db();
+  explicit Db(const std::string &filename);
+  ~Db();
 
-    sqlite3* handle() const { return db_; }
-    void initSchema();
+  void initSchema();
+
+  sqlite3 *handle() { return db_; }
+  sqlite3 *handle() const { return db_; }
 
 private:
-    sqlite3* db_ = nullptr;
+  sqlite3 *db_ = nullptr;
 };
