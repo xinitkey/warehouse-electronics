@@ -20,7 +20,6 @@ events:
     names:
       - "uname"
     candidate_directories:
-      - "/home/lain/.local/share/LazyVim/mason/bin/"
       - "/home/lain/.npm-global/bin/"
       - "/home/lain/bin/"
       - "/home/lain/.config/tmux/plugins/t-smart-tmux-session-manager/bin/"
@@ -33,7 +32,6 @@ events:
       - "/usr/bin/core_perl/"
       - "/bin/"
     searched_directories:
-      - "/home/lain/.local/share/LazyVim/mason/bin/uname"
       - "/home/lain/.npm-global/bin/uname"
       - "/home/lain/bin/uname"
       - "/home/lain/.config/tmux/plugins/t-smart-tmux-session-manager/bin/uname"
@@ -43,7 +41,6 @@ events:
     found: "/usr/bin/uname"
     search_context:
       ENV{PATH}:
-        - "/home/lain/.local/share/LazyVim/mason/bin"
         - "/home/lain/.npm-global/bin"
         - "/home/lain/bin"
         - "/home/lain/.config/tmux/plugins/t-smart-tmux-session-manager/bin"
@@ -64,11 +61,11 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "/usr/share/cmake/Modules/CMakeNinjaFindMake.cmake:5 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeUnixFindMake.cmake:5 (find_program)"
       - "CMakeLists.txt:3 (project)"
     mode: "program"
     variable: "CMAKE_MAKE_PROGRAM"
-    description: "Program used to build from build.ninja files."
+    description: "Path to a program."
     settings:
       SearchFramework: "NEVER"
       SearchAppBundle: "NEVER"
@@ -78,93 +75,9 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
-      - "ninja-build"
-      - "ninja"
-      - "samu"
-    candidate_directories:
-      - "/home/lain/.local/share/LazyVim/mason/bin/"
-      - "/home/lain/.npm-global/bin/"
-      - "/home/lain/bin/"
-      - "/home/lain/.config/tmux/plugins/t-smart-tmux-session-manager/bin/"
-      - "/home/lain/.local/bin/"
-      - "/usr/local/sbin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
-      - "/usr/bin/site_perl/"
-      - "/usr/bin/vendor_perl/"
-      - "/usr/bin/core_perl/"
-    searched_directories:
-      - "/home/lain/.local/share/LazyVim/mason/bin/ninja-build"
-      - "/home/lain/.local/share/LazyVim/mason/bin/ninja"
-      - "/home/lain/.local/share/LazyVim/mason/bin/samu"
-      - "/home/lain/.npm-global/bin/ninja-build"
-      - "/home/lain/.npm-global/bin/ninja"
-      - "/home/lain/.npm-global/bin/samu"
-      - "/home/lain/bin/ninja-build"
-      - "/home/lain/bin/ninja"
-      - "/home/lain/bin/samu"
-      - "/home/lain/.config/tmux/plugins/t-smart-tmux-session-manager/bin/ninja-build"
-      - "/home/lain/.config/tmux/plugins/t-smart-tmux-session-manager/bin/ninja"
-      - "/home/lain/.config/tmux/plugins/t-smart-tmux-session-manager/bin/samu"
-      - "/home/lain/.local/bin/ninja-build"
-      - "/home/lain/.local/bin/ninja"
-      - "/home/lain/.local/bin/samu"
-      - "/usr/local/sbin/ninja-build"
-      - "/usr/local/sbin/ninja"
-      - "/usr/local/sbin/samu"
-      - "/usr/local/bin/ninja-build"
-      - "/usr/local/bin/ninja"
-      - "/usr/local/bin/samu"
-      - "/usr/bin/ninja-build"
-      - "/usr/bin/ninja"
-      - "/usr/bin/samu"
-      - "/usr/bin/site_perl/ninja-build"
-      - "/usr/bin/site_perl/ninja"
-      - "/usr/bin/site_perl/samu"
-      - "/usr/bin/vendor_perl/ninja-build"
-      - "/usr/bin/vendor_perl/ninja"
-      - "/usr/bin/vendor_perl/samu"
-      - "/usr/bin/core_perl/ninja-build"
-      - "/usr/bin/core_perl/ninja"
-      - "/usr/bin/core_perl/samu"
-    found: false
-    search_context:
-      ENV{PATH}:
-        - "/home/lain/.local/share/LazyVim/mason/bin"
-        - "/home/lain/.npm-global/bin"
-        - "/home/lain/bin"
-        - "/home/lain/.config/tmux/plugins/t-smart-tmux-session-manager/bin"
-        - "/home/lain/.local/bin"
-        - "/usr/local/sbin"
-        - "/usr/local/bin"
-        - "/usr/bin"
-        - "/usr/bin/site_perl"
-        - "/usr/bin/vendor_perl"
-        - "/usr/bin/core_perl"
-...
-
----
-events:
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/CMakeNinjaFindMake.cmake:5 (find_program)"
-      - "CMakeLists.txt:3 (project)"
-    mode: "program"
-    variable: "CMAKE_MAKE_PROGRAM"
-    description: "Program used to build from build.ninja files."
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "ninja-build"
-      - "ninja"
-      - "samu"
+      - "gmake"
+      - "make"
+      - "smake"
     candidate_directories:
       - "/home/lain/.npm-global/bin/"
       - "/home/lain/bin/"
@@ -177,26 +90,23 @@ events:
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
     searched_directories:
-      - "/home/lain/.npm-global/bin/ninja-build"
-      - "/home/lain/.npm-global/bin/ninja"
-      - "/home/lain/.npm-global/bin/samu"
-      - "/home/lain/bin/ninja-build"
-      - "/home/lain/bin/ninja"
-      - "/home/lain/bin/samu"
-      - "/home/lain/.config/tmux/plugins/t-smart-tmux-session-manager/bin/ninja-build"
-      - "/home/lain/.config/tmux/plugins/t-smart-tmux-session-manager/bin/ninja"
-      - "/home/lain/.config/tmux/plugins/t-smart-tmux-session-manager/bin/samu"
-      - "/home/lain/.local/bin/ninja-build"
-      - "/home/lain/.local/bin/ninja"
-      - "/home/lain/.local/bin/samu"
-      - "/usr/local/sbin/ninja-build"
-      - "/usr/local/sbin/ninja"
-      - "/usr/local/sbin/samu"
-      - "/usr/local/bin/ninja-build"
-      - "/usr/local/bin/ninja"
-      - "/usr/local/bin/samu"
-      - "/usr/bin/ninja-build"
-    found: "/usr/bin/ninja"
+      - "/home/lain/.npm-global/bin/gmake"
+      - "/home/lain/bin/gmake"
+      - "/home/lain/.config/tmux/plugins/t-smart-tmux-session-manager/bin/gmake"
+      - "/home/lain/.local/bin/gmake"
+      - "/usr/local/sbin/gmake"
+      - "/usr/local/bin/gmake"
+      - "/usr/bin/gmake"
+      - "/usr/bin/site_perl/gmake"
+      - "/usr/bin/vendor_perl/gmake"
+      - "/usr/bin/core_perl/gmake"
+      - "/home/lain/.npm-global/bin/make"
+      - "/home/lain/bin/make"
+      - "/home/lain/.config/tmux/plugins/t-smart-tmux-session-manager/bin/make"
+      - "/home/lain/.local/bin/make"
+      - "/usr/local/sbin/make"
+      - "/usr/local/bin/make"
+    found: "/usr/bin/make"
     search_context:
       ENV{PATH}:
         - "/home/lain/.npm-global/bin"
@@ -985,8 +895,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/home/lain/Projects/warehouse-electronics/build-linux/CMakeFiles/CMakeScratch/TryCompile-DnRuEc"
-      binary: "/home/lain/Projects/warehouse-electronics/build-linux/CMakeFiles/CMakeScratch/TryCompile-DnRuEc"
+      source: "/home/lain/Projects/warehouse-electronics/build-linux/CMakeFiles/CMakeScratch/TryCompile-svNCtg"
+      binary: "/home/lain/Projects/warehouse-electronics/build-linux/CMakeFiles/CMakeScratch/TryCompile-svNCtg"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -997,10 +907,13 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/lain/Projects/warehouse-electronics/build-linux/CMakeFiles/CMakeScratch/TryCompile-DnRuEc'
+        Change Dir: '/home/lain/Projects/warehouse-electronics/build-linux/CMakeFiles/CMakeScratch/TryCompile-svNCtg'
         
-        Run Build Command(s): /usr/bin/ninja -v cmTC_85d58
-        [1/2] /usr/bin/c++   -v -o CMakeFiles/cmTC_85d58.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_a88e0/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_a88e0.dir/build.make CMakeFiles/cmTC_a88e0.dir/build
+        make[1]: Entering directory '/home/lain/Projects/warehouse-electronics/build-linux/CMakeFiles/CMakeScratch/TryCompile-svNCtg'
+        Building CXX object CMakeFiles/cmTC_a88e0.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -v -o CMakeFiles/cmTC_a88e0.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         Target: x86_64-pc-linux-gnu
@@ -1008,8 +921,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 15.2.1 20260209 (GCC) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_85d58.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_85d58.dir/'
-         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_85d58.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccPW00KO.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a88e0.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a88e0.dir/'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_a88e0.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccQfSxEm.s
         GNU C++17 (GCC) version 15.2.1 20260209 (x86_64-pc-linux-gnu)
         	compiled by GNU C version 15.2.1 20260209, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.3.1, isl version isl-0.27-GMP
         
@@ -1026,13 +939,14 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: 5e3969de92aa3c12a625237f01b15b2f
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_85d58.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_85d58.dir/'
-         as -v --64 -o CMakeFiles/cmTC_85d58.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccPW00KO.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a88e0.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a88e0.dir/'
+         as -v --64 -o CMakeFiles/cmTC_a88e0.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccQfSxEm.s
         GNU assembler version 2.46 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.46
         COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_85d58.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_85d58.dir/CMakeCXXCompilerABI.cpp.'
-        [2/2] : && /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_85d58.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_85d58   && :
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a88e0.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a88e0.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_a88e0
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a88e0.dir/link.txt --verbose=1
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper
@@ -1043,12 +957,14 @@ events:
         gcc version 15.2.1 20260209 (GCC) 
         COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_85d58' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_85d58.'
-         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cczOcEXh.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_85d58 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_85d58.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a88e0' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_a88e0.'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cc79nO5X.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_a88e0 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_a88e0.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
         collect2 version 15.2.1 20260209
-        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cczOcEXh.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_85d58 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_85d58.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
+        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cc79nO5X.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_a88e0 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_a88e0.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
         GNU ld (GNU Binutils) 2.46
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_85d58' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_85d58.'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a88e0' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_a88e0.'
+        /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_a88e0.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_a88e0
+        make[1]: Leaving directory '/home/lain/Projects/warehouse-electronics/build-linux/CMakeFiles/CMakeScratch/TryCompile-svNCtg'
         
       exitCode: 0
   -
@@ -1089,10 +1005,13 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/home/lain/Projects/warehouse-electronics/build-linux/CMakeFiles/CMakeScratch/TryCompile-DnRuEc']
+        ignore line: [Change Dir: '/home/lain/Projects/warehouse-electronics/build-linux/CMakeFiles/CMakeScratch/TryCompile-svNCtg']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/ninja -v cmTC_85d58]
-        ignore line: [[1/2] /usr/bin/c++   -v -o CMakeFiles/cmTC_85d58.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_a88e0/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_a88e0.dir/build.make CMakeFiles/cmTC_a88e0.dir/build]
+        ignore line: [make[1]: Entering directory '/home/lain/Projects/warehouse-electronics/build-linux/CMakeFiles/CMakeScratch/TryCompile-svNCtg']
+        ignore line: [Building CXX object CMakeFiles/cmTC_a88e0.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_a88e0.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [Target: x86_64-pc-linux-gnu]
@@ -1100,8 +1019,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 15.2.1 20260209 (GCC) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_85d58.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_85d58.dir/']
-        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_85d58.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccPW00KO.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a88e0.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a88e0.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_a88e0.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccQfSxEm.s]
         ignore line: [GNU C++17 (GCC) version 15.2.1 20260209 (x86_64-pc-linux-gnu)]
         ignore line: [	compiled by GNU C version 15.2.1 20260209  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.3.1  isl version isl-0.27-GMP]
         ignore line: []
@@ -1118,13 +1037,14 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 5e3969de92aa3c12a625237f01b15b2f]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_85d58.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_85d58.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_85d58.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccPW00KO.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a88e0.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a88e0.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_a88e0.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccQfSxEm.s]
         ignore line: [GNU assembler version 2.46 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.46]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_85d58.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_85d58.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [[2/2] : && /usr/bin/c++  -v -Wl -v CMakeFiles/cmTC_85d58.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_85d58   && :]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a88e0.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a88e0.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_a88e0]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a88e0.dir/link.txt --verbose=1]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper]
@@ -1135,13 +1055,13 @@ events:
         ignore line: [gcc version 15.2.1 20260209 (GCC) ]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_85d58' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_85d58.']
-        link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cczOcEXh.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_85d58 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_85d58.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a88e0' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_a88e0.']
+        link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cc79nO5X.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_a88e0 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_a88e0.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/cczOcEXh.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/cc79nO5X.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -1156,7 +1076,7 @@ events:
           arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
           arg [-pie] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_85d58] ==> ignore
+          arg [cmTC_a88e0] ==> ignore
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o]
@@ -1168,7 +1088,7 @@ events:
           arg [-L/lib] ==> dir [/lib]
           arg [-L/usr/lib] ==> dir [/usr/lib]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_85d58.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_a88e0.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc_s] ==> lib [gcc_s]
@@ -1179,7 +1099,7 @@ events:
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
         ignore line: [collect2 version 15.2.1 20260209]
-        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cczOcEXh.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_85d58 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_85d58.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
+        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cc79nO5X.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_a88e0 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_a88e0.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
         linker tool for 'CXX': /usr/bin/ld
         collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o] ==> [/usr/lib/Scrt1.o]
         collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o] ==> [/usr/lib/crti.o]
@@ -1862,426 +1782,4 @@ events:
         - "/opt"
       CMAKE_SYSTEM_LIBRARY_PATH:
         - "/usr/lib/X11"
-...
-
----
-events:
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/FindwxWidgets.cmake:1138 (find_library)"
-      - "CMakeLists.txt:39 (find_package)"
-    mode: "library"
-    variable: "_wx_lib_found"
-    description: "Path to a library."
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "wx_gtk3u_core-3.2"
-    candidate_directories:
-      - "/home/lain/.npm-global/bin/"
-      - "/home/lain/bin/"
-      - "/home/lain/.config/tmux/plugins/t-smart-tmux-session-manager/bin/"
-      - "/home/lain/.local/bin/"
-      - "/usr/local/sbin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
-      - "/usr/bin/site_perl/"
-      - "/usr/bin/vendor_perl/"
-      - "/usr/bin/core_perl/"
-      - "/usr/local/lib/"
-      - "/usr/local/"
-      - "/usr/lib/"
-      - "/usr/"
-      - "/lib/"
-      - "/usr/X11R6/lib/"
-      - "/usr/X11R6/"
-      - "/usr/pkg/lib/"
-      - "/usr/pkg/"
-      - "/opt/lib/"
-      - "/opt/"
-      - "/usr/lib/X11/"
-    searched_directories:
-      - "/home/lain/.npm-global/bin/"
-      - "/home/lain/bin/"
-      - "/home/lain/.config/tmux/plugins/t-smart-tmux-session-manager/bin/"
-      - "/home/lain/.local/bin/"
-      - "/usr/local/sbin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
-      - "/usr/bin/site_perl/"
-      - "/usr/bin/vendor_perl/"
-      - "/usr/bin/core_perl/"
-      - "/usr/local/lib/"
-      - "/usr/local/"
-    found: "/usr/lib/libwx_gtk3u_core-3.2.so"
-    search_context:
-      ENV{PATH}:
-        - "/home/lain/.npm-global/bin"
-        - "/home/lain/bin"
-        - "/home/lain/.config/tmux/plugins/t-smart-tmux-session-manager/bin"
-        - "/home/lain/.local/bin"
-        - "/usr/local/sbin"
-        - "/usr/local/bin"
-        - "/usr/bin"
-        - "/usr/bin/site_perl"
-        - "/usr/bin/vendor_perl"
-        - "/usr/bin/core_perl"
-      CMAKE_INSTALL_PREFIX: "/usr/local"
-      CMAKE_SYSTEM_PREFIX_PATH:
-        - "/usr/local"
-        - "/usr"
-        - "/"
-        - "/usr"
-        - "/usr/local"
-        - "/usr/X11R6"
-        - "/usr/pkg"
-        - "/opt"
-      CMAKE_SYSTEM_LIBRARY_PATH:
-        - "/usr/lib/X11"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/FindwxWidgets.cmake:1138 (find_library)"
-      - "CMakeLists.txt:39 (find_package)"
-    mode: "library"
-    variable: "_wx_lib_found"
-    description: "Path to a library."
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "wx_baseu-3.2"
-    candidate_directories:
-      - "/home/lain/.npm-global/bin/"
-      - "/home/lain/bin/"
-      - "/home/lain/.config/tmux/plugins/t-smart-tmux-session-manager/bin/"
-      - "/home/lain/.local/bin/"
-      - "/usr/local/sbin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
-      - "/usr/bin/site_perl/"
-      - "/usr/bin/vendor_perl/"
-      - "/usr/bin/core_perl/"
-      - "/usr/local/lib/"
-      - "/usr/local/"
-      - "/usr/lib/"
-      - "/usr/"
-      - "/lib/"
-      - "/usr/X11R6/lib/"
-      - "/usr/X11R6/"
-      - "/usr/pkg/lib/"
-      - "/usr/pkg/"
-      - "/opt/lib/"
-      - "/opt/"
-      - "/usr/lib/X11/"
-    searched_directories:
-      - "/home/lain/.npm-global/bin/"
-      - "/home/lain/bin/"
-      - "/home/lain/.config/tmux/plugins/t-smart-tmux-session-manager/bin/"
-      - "/home/lain/.local/bin/"
-      - "/usr/local/sbin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
-      - "/usr/bin/site_perl/"
-      - "/usr/bin/vendor_perl/"
-      - "/usr/bin/core_perl/"
-      - "/usr/local/lib/"
-      - "/usr/local/"
-    found: "/usr/lib/libwx_baseu-3.2.so"
-    search_context:
-      ENV{PATH}:
-        - "/home/lain/.npm-global/bin"
-        - "/home/lain/bin"
-        - "/home/lain/.config/tmux/plugins/t-smart-tmux-session-manager/bin"
-        - "/home/lain/.local/bin"
-        - "/usr/local/sbin"
-        - "/usr/local/bin"
-        - "/usr/bin"
-        - "/usr/bin/site_perl"
-        - "/usr/bin/vendor_perl"
-        - "/usr/bin/core_perl"
-      CMAKE_INSTALL_PREFIX: "/usr/local"
-      CMAKE_SYSTEM_PREFIX_PATH:
-        - "/usr/local"
-        - "/usr"
-        - "/"
-        - "/usr"
-        - "/usr/local"
-        - "/usr/X11R6"
-        - "/usr/pkg"
-        - "/opt"
-      CMAKE_SYSTEM_LIBRARY_PATH:
-        - "/usr/lib/X11"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/FindwxWidgets.cmake:374 (find_file)"
-      - "/usr/share/cmake/Modules/FindwxWidgets.cmake:1157 (wx_extract_version)"
-      - "CMakeLists.txt:39 (find_package)"
-    mode: "file"
-    variable: "_wx_filename"
-    description: "Path to a file."
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "wx/version.h"
-    candidate_directories:
-      - "/usr/lib/wx/include/gtk3-unicode-3.2/"
-      - "/usr/include/wx-3.2/"
-    searched_directories:
-      - "/usr/lib/wx/include/gtk3-unicode-3.2/wx/version.h"
-    found: "/usr/include/wx-3.2/wx/version.h"
-    search_context:
-      ENV{PATH}:
-        - "/home/lain/.npm-global/bin"
-        - "/home/lain/bin"
-        - "/home/lain/.config/tmux/plugins/t-smart-tmux-session-manager/bin"
-        - "/home/lain/.local/bin"
-        - "/usr/local/sbin"
-        - "/usr/local/bin"
-        - "/usr/bin"
-        - "/usr/bin/site_perl"
-        - "/usr/bin/vendor_perl"
-        - "/usr/bin/core_perl"
-      CMAKE_INSTALL_PREFIX: "/usr/local"
-      CMAKE_SYSTEM_PREFIX_PATH:
-        - "/usr/local"
-        - "/usr"
-        - "/"
-        - "/usr"
-        - "/usr/local"
-        - "/usr/X11R6"
-        - "/usr/pkg"
-        - "/opt"
-      CMAKE_SYSTEM_INCLUDE_PATH:
-        - "/usr/include/X11"
-...
-
----
-events:
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/FindwxWidgets.cmake:1138 (find_library)"
-      - "CMakeLists.txt:39 (find_package)"
-    mode: "library"
-    variable: "_wx_lib_found"
-    description: "Path to a library."
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "wx_gtk3u_core-3.2"
-    candidate_directories:
-      - "/home/lain/.npm-global/bin/"
-      - "/home/lain/bin/"
-      - "/home/lain/.config/tmux/plugins/t-smart-tmux-session-manager/bin/"
-      - "/home/lain/.local/bin/"
-      - "/usr/local/sbin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
-      - "/usr/bin/site_perl/"
-      - "/usr/bin/vendor_perl/"
-      - "/usr/bin/core_perl/"
-      - "/usr/local/lib/"
-      - "/usr/local/"
-      - "/usr/lib/"
-      - "/usr/"
-      - "/lib/"
-      - "/usr/X11R6/lib/"
-      - "/usr/X11R6/"
-      - "/usr/pkg/lib/"
-      - "/usr/pkg/"
-      - "/opt/lib/"
-      - "/opt/"
-      - "/usr/lib/X11/"
-    searched_directories:
-      - "/home/lain/.npm-global/bin/"
-      - "/home/lain/bin/"
-      - "/home/lain/.config/tmux/plugins/t-smart-tmux-session-manager/bin/"
-      - "/home/lain/.local/bin/"
-      - "/usr/local/sbin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
-      - "/usr/bin/site_perl/"
-      - "/usr/bin/vendor_perl/"
-      - "/usr/bin/core_perl/"
-      - "/usr/local/lib/"
-      - "/usr/local/"
-    found: "/usr/lib/libwx_gtk3u_core-3.2.so"
-    search_context:
-      ENV{PATH}:
-        - "/home/lain/.npm-global/bin"
-        - "/home/lain/bin"
-        - "/home/lain/.config/tmux/plugins/t-smart-tmux-session-manager/bin"
-        - "/home/lain/.local/bin"
-        - "/usr/local/sbin"
-        - "/usr/local/bin"
-        - "/usr/bin"
-        - "/usr/bin/site_perl"
-        - "/usr/bin/vendor_perl"
-        - "/usr/bin/core_perl"
-      CMAKE_INSTALL_PREFIX: "/usr/local"
-      CMAKE_SYSTEM_PREFIX_PATH:
-        - "/usr/local"
-        - "/usr"
-        - "/"
-        - "/usr"
-        - "/usr/local"
-        - "/usr/X11R6"
-        - "/usr/pkg"
-        - "/opt"
-      CMAKE_SYSTEM_LIBRARY_PATH:
-        - "/usr/lib/X11"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/FindwxWidgets.cmake:1138 (find_library)"
-      - "CMakeLists.txt:39 (find_package)"
-    mode: "library"
-    variable: "_wx_lib_found"
-    description: "Path to a library."
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "wx_baseu-3.2"
-    candidate_directories:
-      - "/home/lain/.npm-global/bin/"
-      - "/home/lain/bin/"
-      - "/home/lain/.config/tmux/plugins/t-smart-tmux-session-manager/bin/"
-      - "/home/lain/.local/bin/"
-      - "/usr/local/sbin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
-      - "/usr/bin/site_perl/"
-      - "/usr/bin/vendor_perl/"
-      - "/usr/bin/core_perl/"
-      - "/usr/local/lib/"
-      - "/usr/local/"
-      - "/usr/lib/"
-      - "/usr/"
-      - "/lib/"
-      - "/usr/X11R6/lib/"
-      - "/usr/X11R6/"
-      - "/usr/pkg/lib/"
-      - "/usr/pkg/"
-      - "/opt/lib/"
-      - "/opt/"
-      - "/usr/lib/X11/"
-    searched_directories:
-      - "/home/lain/.npm-global/bin/"
-      - "/home/lain/bin/"
-      - "/home/lain/.config/tmux/plugins/t-smart-tmux-session-manager/bin/"
-      - "/home/lain/.local/bin/"
-      - "/usr/local/sbin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
-      - "/usr/bin/site_perl/"
-      - "/usr/bin/vendor_perl/"
-      - "/usr/bin/core_perl/"
-      - "/usr/local/lib/"
-      - "/usr/local/"
-    found: "/usr/lib/libwx_baseu-3.2.so"
-    search_context:
-      ENV{PATH}:
-        - "/home/lain/.npm-global/bin"
-        - "/home/lain/bin"
-        - "/home/lain/.config/tmux/plugins/t-smart-tmux-session-manager/bin"
-        - "/home/lain/.local/bin"
-        - "/usr/local/sbin"
-        - "/usr/local/bin"
-        - "/usr/bin"
-        - "/usr/bin/site_perl"
-        - "/usr/bin/vendor_perl"
-        - "/usr/bin/core_perl"
-      CMAKE_INSTALL_PREFIX: "/usr/local"
-      CMAKE_SYSTEM_PREFIX_PATH:
-        - "/usr/local"
-        - "/usr"
-        - "/"
-        - "/usr"
-        - "/usr/local"
-        - "/usr/X11R6"
-        - "/usr/pkg"
-        - "/opt"
-      CMAKE_SYSTEM_LIBRARY_PATH:
-        - "/usr/lib/X11"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/FindwxWidgets.cmake:374 (find_file)"
-      - "/usr/share/cmake/Modules/FindwxWidgets.cmake:1157 (wx_extract_version)"
-      - "CMakeLists.txt:39 (find_package)"
-    mode: "file"
-    variable: "_wx_filename"
-    description: "Path to a file."
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "wx/version.h"
-    candidate_directories:
-      - "/usr/lib/wx/include/gtk3-unicode-3.2/"
-      - "/usr/include/wx-3.2/"
-    searched_directories:
-      - "/usr/lib/wx/include/gtk3-unicode-3.2/wx/version.h"
-    found: "/usr/include/wx-3.2/wx/version.h"
-    search_context:
-      ENV{PATH}:
-        - "/home/lain/.npm-global/bin"
-        - "/home/lain/bin"
-        - "/home/lain/.config/tmux/plugins/t-smart-tmux-session-manager/bin"
-        - "/home/lain/.local/bin"
-        - "/usr/local/sbin"
-        - "/usr/local/bin"
-        - "/usr/bin"
-        - "/usr/bin/site_perl"
-        - "/usr/bin/vendor_perl"
-        - "/usr/bin/core_perl"
-      CMAKE_INSTALL_PREFIX: "/usr/local"
-      CMAKE_SYSTEM_PREFIX_PATH:
-        - "/usr/local"
-        - "/usr"
-        - "/"
-        - "/usr"
-        - "/usr/local"
-        - "/usr/X11R6"
-        - "/usr/pkg"
-        - "/opt"
-      CMAKE_SYSTEM_INCLUDE_PATH:
-        - "/usr/include/X11"
 ...

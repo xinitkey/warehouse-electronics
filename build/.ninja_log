@@ -1,7 +1,0 @@
-# ninja log v7
-19	485	7958244309410527	CMakeFiles/warehouse_app.dir/src/warehouse/db.cpp.obj	675f06860d3aecc6
-25	577	7958244309472328	CMakeFiles/warehouse_app.dir/src/warehouse/storage.cpp.obj	b5ab6b8dbaafec16
-11	3019	7958249565565311	CMakeFiles/warehouse_app.dir/src/warehouse/ui_add_item_dialog.cpp.obj	5b21e20555a30cb8
-5	3158	7958244309275205	CMakeFiles/warehouse_app.dir/src/main.cpp.obj	c7ef8c2cf160d80c
-4	3156	7958249565497779	CMakeFiles/warehouse_app.dir/src/ui_main_frame.cpp.obj	59a239af1b2c11a4
-3156	4253	7958249597013675	warehouse_app.exe	4fc2d96e5186e746

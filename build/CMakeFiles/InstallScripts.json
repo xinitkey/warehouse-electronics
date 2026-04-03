@@ -1,7 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"C:/Users/FYM/code/warehouse-electronics/build/cmake_install.cmake"
+		"/home/lain/Projects/warehouse-electronics/build/cmake_install.cmake"
 	],
 	"Parallel" : false
 }
