@@ -1,7 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/home/lain/Projects/warehouse-electronics/build/cmake_install.cmake"
-	],
-	"Parallel" : false
-}
