@@ -112,9 +112,10 @@ warehouse-electronics/
 │       ├── db.cpp            # SQLite initialization + migrations
 │       ├── storage.cpp       # CRUD, search, stats, operations, CSV
 │       └── ui_add_item_dialog.cpp
-├── CMakeLists.txt
-└── warehouse.db              # SQLite database
+└── CMakeLists.txt
 ```
+
+> **Note:** The `warehouse.db` SQLite database is created automatically on first run.
 
 ## Usage
 
